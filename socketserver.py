@@ -13,13 +13,20 @@ while True:
     conn, address = s.accept()
     data = conn.recv(BUFFER_SIZE)
     request = data.split('\r\n',1)[0].split(' ')[1]
-    if request == '/index.html':
-				file = open('./index.html', 'rb')
-				conn.send("""HTTP/1.1 200 OK \n Content type:text HTML\n\n\n """ + file.read())
-				file.close()
-		else if request == '/about/aboutme.html':
-				file = open('./about/aboutme.html', 'rb')
-				conn.send("""HTTP/1.1 200 OK \n Content type:text HTML\n\n\n """ + file.read())
-				file.close()
+
+    if address == "/about/aboutme.html":
+        file = open("/home/lisa/Documents/"+address, mode = 'r')
+        conn.send("""HTTP/1.1 200 OK \n Content type:text HTML\n\n\n """ + file.read()) 
+	file.close() 
+
+    if address == "/index.html" or "/":
+        file = open("/home/lisa/Documents/index.html", mode = 'r')
+	conn.send("""HTTP/1.1 200 OK \n Content type:text HTML\n\n\n """ + file.read())  
+	file.close()
+
+    client_connection.close()
+_socket.close()
+
+			
 conn.close()
 s.close()
