@@ -25,8 +25,6 @@ while True:
 	file.close()
 
     client_connection.close()
-_socket.close()
-
 			
 conn.close()
 s.close()
