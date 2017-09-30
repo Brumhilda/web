@@ -23,8 +23,6 @@ while True:
         file = open("/home/lisa/Documents/index.html", mode = 'r')
 	conn.send("""HTTP/1.1 200 OK \n Content type:text HTML\n\n\n """ + file.read())  
 	file.close()
-
-    client_connection.close()
 			
 conn.close()
 s.close()
