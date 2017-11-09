@@ -37,7 +37,6 @@ class WsgiTopBottomMiddleware(object):
 	    
 
 def app(environ, start_response):
-    //WSGI приложение которое отдает HTML документ
     addr = environ['PATH_INFO']
     path = '.' + addr  
     file = open(path, 'r')
