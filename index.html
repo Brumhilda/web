@@ -1,18 +1,5 @@
-<!DOCTYPE HTML>
-
-<html>
-
-<head>
-
-<title>Index</title>
-</head>
-
-<body>
-
-<p><a href="/home/lisa/Documents/about/aboutme.html">AbsLink</a></p> 
-<p><a href="about/abotme.html">RelLink</a></p> 
-
-</body>
-
-</html>
+{% extends "base.html" %}
+{% block title %}Index{% endblock %}
+{% block AbsLink %}/home/lisa/Documents/about/aboutme.html{% endblock %}
+{% block RelLink %}about/aboutme.html{% endblock %}
 
